@@ -1,17 +1,16 @@
+# Moniyat Chowdhury
+# HW2 - RecyclerView & Multiple Activities 
 
-# Dotify by Moniyat Chowdhury
+This app was supposed showcase recycle views by showing a users playlist which they can shuffle. 
 
-This is a music play app that allows users to listen to music on the cloud
+I did not attempt any extra credit
 
-## Extra credit
-None :/
+I accidently made the file in the same project so the emulator wasn't working for me. I found out late and decided to just attempt it without the emulator.
 
-## Screenshots
-<img src="./clicked.jpg" alt="Screenshot of the app when clicked on previous icon" height="500" />
+I'm really sorry, I thought 5 days would be enough time but it wasn't. I'm still trying to figure out a schedule because this quarter is very hectic for me.
 
+# Installation and Usage
 
-## Installation & Usage
-Click on the prev icon to go to the previous song
-Click on the next icon to go to the next song
-Click on change user to retype correct user
-Click play to increment number of times played
+The Shuffle button is supposed to shuffle the playlist
+A recycle view to showcase all your songs
+When you tap on a song it takes you to the song page from hw1
