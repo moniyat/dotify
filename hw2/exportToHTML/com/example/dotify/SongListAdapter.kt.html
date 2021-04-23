@@ -1,0 +1,49 @@
+<html>
+<head>
+<title>SongListAdapter.kt</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #000080; font-weight: bold;}
+.s1 { color: #000000;}
+.s2 { color: #808080; font-style: italic;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+SongListAdapter.kt</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span>com.example.dotify
+
+import android.view.LayoutInflater
+import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
+import com.example.dotify.databinding.ActivityItemsBinding
+
+<span class="s0">class </span>SongAdapter (private <span class="s0">val </span>listOfSongs: List&lt;SongList&gt;): RecyclerView.Adapter&lt;SongAdapter.SongViewHolder&gt;() {
+    <span class="s0">var </span>onSongClickListener: (name: String) -&gt; Unit = { _ -&gt;  }
+
+    <span class="s0">class </span>SongViewHolder(<span class="s0">val </span>binding: ActivityItemsBinding): RecyclerView.ViewHolder(binding.root)
+    override <span class="s0">fun </span>onCreateViewHolder(parent: ViewGroup, viewType: Int): SongAdapter.SongViewHolder {
+        <span class="s0">val </span>binding = ActivityItemsBinding.inflate(LayoutInflater.from(parent.context))
+        <span class="s0">return </span>SongViewHolder(binding)
+
+    }
+
+    override <span class="s0">fun </span>onBindViewHolder(holder: SongAdapter.SongViewHolder, position: Int) {
+        <span class="s0">val </span>sName: SongList = listOfSongs[position]
+        with(holder.binding) {
+            <span class="s0">val </span>adapter = SongAdapter(listOf())
+            songName.text = sName.name
+            <span class="s2">// albumCover.src = song.</span>
+            root.setOnClickListener{
+                onSongClickListener(sName.name)
+            }
+        }
+    }
+
+    override <span class="s0">fun </span>getItemCount(): Int = listOfSongs.size
+}</pre>
+</body>
+</html>

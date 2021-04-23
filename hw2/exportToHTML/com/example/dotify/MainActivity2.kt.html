@@ -1,0 +1,64 @@
+<html>
+<head>
+<title>MainActivity2.kt</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #000080; font-weight: bold;}
+.s1 { color: #000000;}
+.s2 { color: #008000; font-weight: bold;}
+.s3 { color: #808080; font-style: italic;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+MainActivity2.kt</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span>com.example.dotify
+
+import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import com.example.dotify.databinding.ActivityMain2Binding
+
+<span class="s0">class </span>MainActivity2 : AppCompatActivity() {
+
+    private lateinit <span class="s0">var </span>binding: ActivityMain2Binding
+
+    override <span class="s0">fun </span>onCreate(savedInstanceState: Bundle?) {
+        <span class="s0">super</span>.onCreate(savedInstanceState)
+        binding = ActivityMain2Binding.inflate(layoutInflater).apply {setContentView(root)}
+
+        with(binding) {
+            <span class="s0">val </span>songInfo = listOf&lt;SongList&gt; (
+                    SongList(<span class="s2">&quot;1&quot;</span>, <span class="s2">&quot;Until I Bleed Out&quot;</span>, <span class="s2">&quot;The Weeknd&quot;</span>, <span class="s2">&quot;@drawable/after_hours&quot;</span>),
+                    SongList(<span class="s2">&quot;2&quot;</span>, <span class="s2">&quot;Alone Again&quot;</span>, <span class="s2">&quot;The Weeknd&quot;</span>,  <span class="s2">&quot;@drawable/after_hours&quot;</span>),
+                    SongList(<span class="s2">&quot;3&quot;</span>, <span class="s2">&quot;Too Late&quot;</span>, <span class="s2">&quot;The Weeknd&quot;</span>,  <span class="s2">&quot;@drawable/after_hours&quot;</span>),
+                    SongList(<span class="s2">&quot;4&quot;</span>, <span class="s2">&quot;Hardest to Love&quot;</span>, <span class="s2">&quot;The Weeknd&quot;</span>,  <span class="s2">&quot;@drawable/after_hours&quot;</span>),
+                    SongList(<span class="s2">&quot;5&quot;</span>, <span class="s2">&quot;Scared to Live&quot;</span>, <span class="s2">&quot;The Weeknd&quot;</span>,  <span class="s2">&quot;@drawable/after_hours&quot;</span>),
+                    SongList(<span class="s2">&quot;6&quot;</span>, <span class="s2">&quot;Snow Child&quot;</span>, <span class="s2">&quot;The Weeknd&quot;</span>,  <span class="s2">&quot;@drawable/after_hours&quot;</span>),
+                    SongList(<span class="s2">&quot;7&quot;</span>, <span class="s2">&quot;Escape From LA&quot;</span>, <span class="s2">&quot;The Weeknd&quot;</span>,  <span class="s2">&quot;@drawable/after_hours&quot;</span>),
+                    SongList(<span class="s2">&quot;8&quot;</span>, <span class="s2">&quot;Heartless&quot;</span>, <span class="s2">&quot;The Weeknd&quot;</span>,  <span class="s2">&quot;@drawable/after_hours&quot;</span>),
+                    SongList(<span class="s2">&quot;9&quot;</span>, <span class="s2">&quot;Faith&quot;</span>, <span class="s2">&quot;The Weeknd&quot;</span>,  <span class="s2">&quot;@drawable/after_hours&quot;</span>),
+                    SongList(<span class="s2">&quot;10&quot;</span>, <span class="s2">&quot;Blinding Lights&quot;</span>, <span class="s2">&quot;The Weeknd&quot;</span>,  <span class="s2">&quot;@drawable/after_hours&quot;</span>)
+                    )
+            <span class="s0">val </span>adapter = SongAdapter(songInfo)
+            info.adapter = adapter
+
+            <span class="s3">//adapter.onSongClickListener = { position, name -&gt;</span>
+            <span class="s3">//    Toast.makeText(this@MainAcitvity2, &quot;Suffled&quot;)</span>
+            <span class="s3">//}</span>
+
+            <span class="s3">//shuffleBtn.setOnClickListener = {</span>
+            <span class="s3">//    adapter.updateSongs(songs.toMutableList().shuffle())</span>
+            <span class="s3">//}</span>
+        }
+
+
+
+    }
+}
+
+</pre>
+</body>
+</html>

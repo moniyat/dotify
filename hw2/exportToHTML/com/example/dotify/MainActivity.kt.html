@@ -1,0 +1,100 @@
+<html>
+<head>
+<title>MainActivity.kt</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #000080; font-weight: bold;}
+.s1 { color: #000000;}
+.s2 { color: #0000ff;}
+.s3 { color: #008000; font-weight: bold;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+MainActivity.kt</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span>com.example.dotify
+
+import android.os.Bundle
+import android.util.Log
+import android.view.View
+import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
+import com.example.dotify.databinding.ActivityMainBinding
+import kotlin.random.Random
+
+<span class="s0">class </span>MainActivity : AppCompatActivity() {
+    private lateinit <span class="s0">var </span>username: TextView
+    private lateinit <span class="s0">var </span>userBtn: Button
+    private lateinit <span class="s0">var </span>prevSong: ImageButton
+    private lateinit <span class="s0">var </span>nextSong: ImageButton
+    private lateinit <span class="s0">var </span>play: ImageButton
+    private lateinit <span class="s0">var </span>changeUsername: EditText
+    private lateinit <span class="s0">var </span>numPlays: TextView
+    private lateinit <span class="s0">var </span>binding: ActivityMainBinding
+    private <span class="s0">val </span>randomNumber = Random.nextInt(<span class="s2">1000</span>, <span class="s2">10000</span>)
+
+    override <span class="s0">fun </span>onCreate(savedInstanceState: Bundle?) {
+        <span class="s0">super</span>.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        username = findViewById(R.id.username)
+        userBtn = findViewById(R.id.userBtn)
+        prevSong = findViewById(R.id.prevSong)
+        nextSong = findViewById(R.id.nextSong)
+        numPlays = findViewById(R.id.numPlays)
+        play = findViewById(R.id.play)
+        changeUsername = findViewById(R.id.changeUsername)
+
+        numPlays.text = randomNumber.toString()
+
+        prevSong.setOnClickListener {
+            navPrevClicked()
+        }
+
+        nextSong.setOnClickListener {
+            navNextClicked()
+        }
+
+        play.setOnClickListener {
+            playClicked()
+        }
+        <span class="s0">var </span>applyOn = <span class="s0">true</span>
+
+        userBtn.setOnClickListener {
+            changeUsername.visibility = <span class="s0">if </span>(applyOn) {
+                userBtn.text = <span class="s3">&quot;Apply&quot;</span>
+                View.VISIBLE
+            } <span class="s0">else </span>{
+                userBtn.text = <span class="s3">&quot;Change User&quot;</span>
+                View.INVISIBLE
+            }
+            username.visibility = <span class="s0">if </span>(applyOn) {
+                View.GONE
+            } <span class="s0">else </span>{
+                View.VISIBLE
+            }
+            username.text = changeUsername.text
+            applyOn = <span class="s0">false</span>
+        }
+
+
+    }
+    <span class="s0">fun </span>navNextClicked() {
+        Log.i(<span class="s3">&quot;navNextMessage&quot;</span>, <span class="s3">&quot;Skipping to next track&quot;</span>)
+        Toast.makeText(<span class="s0">this</span>, <span class="s3">&quot;Skipping to next track&quot;</span>, Toast.LENGTH_SHORT).show()
+    }
+
+    <span class="s0">fun </span>navPrevClicked() {
+        Log.i(<span class="s3">&quot;navPrevMessage&quot;</span>, <span class="s3">&quot;Skipping to prev track&quot;</span>)
+        Toast.makeText(<span class="s0">this</span>, <span class="s3">&quot;Skipping to prev track&quot;</span>, Toast.LENGTH_SHORT).show()
+    }
+
+    <span class="s0">fun </span>playClicked() {
+        numPlays.text = (randomNumber + <span class="s2">1</span>).toString()
+    }
+
+}</pre>
+</body>
+</html>
