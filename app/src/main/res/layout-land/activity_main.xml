@@ -1,0 +1,101 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+
+    <Button
+        android:id="@+id/settingBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Settings"
+        android:layout_gravity="right"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/coverArt"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/album_cover"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="center"/>
+
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:text="Strangers"
+        android:layout_gravity="center"
+        android:textSize="32dp"/>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SevenLions Feat. Tove Lo"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10dp"/>
+
+    <TextView
+        android:id="@+id/numPlays"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <ImageButton
+            android:id="@+id/prevSong"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@android:color/transparent"
+            android:foreground="?selectableItemBackground"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_previous"
+            android:layout_gravity="center"
+            android:layout_marginRight="20dp"/>
+
+        <ImageButton
+            android:id="@+id/play"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@android:color/transparent"
+            android:foreground="?selectableItemBackground"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_play"
+            android:layout_gravity="center"/>
+
+        <ImageButton
+            android:id="@+id/nextSong"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@android:color/transparent"
+            android:foreground="?selectableItemBackground"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_next"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"/>
+
+
+    </LinearLayout>
+    <fragment
+        android:id="@+id/fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:defaultNavHost="true"
+        tools:layout_editor_absoluteX="57dp"
+        tools:layout_editor_absoluteY="73dp" />
+    <?xml version="1.0" encoding="utf-8"?>
+</LinearLayout>
